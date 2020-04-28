@@ -7,23 +7,26 @@ import cv2
 import numpy as np
 from me470 import Geo_TF
 
-front_img = cv2.imread('./src_pics/bot.jpg')
+front_img = cv2.imread('./src_pics/bot.jpg')  #Original size [1920,1080]
 top_img = cv2.imread('./src_pics/fisheye.jpg')
 
 geo = Geo_TF()
 
-x,y = 0,-1150   # Note: manually adjust (x,y) to obtain the desired image
+'''Note: manually adjust (x,y) to obtain the desired image'''
+x,y = 0,-1150
 
-# This transformation matrix is generated from pp_mat.py
+'''This transformation matrix is generated from pp_mat.py'''
 M = np.float32([[ 0.6732,-1.9764,27.8993],
  [-0.1401,-2.3433,73.0916],
  [-0.0001,-0.003 , 1.    ]])
 
 M = geo.translate_mat(M,x,y)
 M = geo.size(M,1)
+
+''' Copy paste this TF matrix to video.py '''
 print(np.array2string(M, precision=4, separator=',',suppress_small=True))
 
-warped = cv2.warpPerspective(front_img,M,(1280,640))   # size: (1280,640)
+warped = cv2.warpPerspective(front_img,M,(1280,640))   #size: (1280,640)
 cv2.imwrite('warped_bot.png',warped)
 
 while(1):

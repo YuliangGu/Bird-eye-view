@@ -34,13 +34,13 @@ img2gray = cv2.cvtColor(copy,cv2.COLOR_BGR2GRAY)              # convert to grays
 _ , mask = cv2.threshold(img2gray,1, 255, cv2.THRESH_BINARY)  # obtain mask
 mask_inv = cv2.bitwise_not(mask)                              # inverse mask
 
-over_not = cv2.bitwise_and(img_,img_,mask=mask_inv)           #
+over_not = cv2.bitwise_and(img_,img_,mask=mask_inv)          
 img = geo.add(over_not,copy)
 
 # cv2.imwrite('birdeye.png',copy)
 
 while(1):
-    cv2.imshow('bird eye view',img_)
+    cv2.imshow('bird eye view',img)
     if cv2.waitKey(1)== ord('q'):
         break
 
