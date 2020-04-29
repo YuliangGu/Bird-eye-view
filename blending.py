@@ -16,8 +16,8 @@ warped_l = cv2.imread('./setup2/warped/warped_left.png')
 warped_b =cv2.imread('./setup2/warped/warped_bot.png')
 
 # Background
-canvas_1 = np.zeros(shape = [1700,1700,3], dtype = np.uint8)
-canvas_2 = np.zeros(shape = [1700,1700,3], dtype = np.uint8)
+canvas_1 = np.zeros(shape = [1600,1700,3], dtype = np.uint8)
+canvas_2 = np.zeros(shape = [1600,1700,3], dtype = np.uint8)
 
 # Manually adjust (x,y) to line up images
 img_t = geo.add(warped_t,canvas_1,x=300,y = 0)  # add top to the canvas
