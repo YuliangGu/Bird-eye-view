@@ -10,7 +10,7 @@ import numpy as np
 from me470 import Geo_TF
 
 geo = Geo_TF()
-scale = 2
+scale = 1
 
 top_list = np.empty([4,2],dtype=np.float32)
 front_list = np.empty([4,2],dtype=np.float32)
@@ -18,9 +18,9 @@ front_list = np.empty([4,2],dtype=np.float32)
 count_top = 0
 count_fr = 0
 
-top_img = cv2.imread('./src_pics/fisheye.jpg')
+top_img = cv2.imread('./setup2/src/birdeye.jpg')
 top_img = geo.resize(top_img,scale)
-front_img = cv2.imread('./src_pics/top.jpg')
+front_img = cv2.imread('./setup2/src/left.jpg')
 
 cv2.namedWindow('top')
 cv2.namedWindow('front')
