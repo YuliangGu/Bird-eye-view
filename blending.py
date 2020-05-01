@@ -42,7 +42,7 @@ cv2.imwrite('./setup2/warped/birdeye_wo_mask.png',img_example)
 
 
 while(1):
-    cv2.imshow('bird eye view',img)
+    cv2.imshow('bird eye view',img_tb)
     if cv2.waitKey(1)== ord('q'):
         break
 

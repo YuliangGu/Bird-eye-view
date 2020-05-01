@@ -20,7 +20,7 @@ count_fr = 0
 
 top_img = cv2.imread('./setup2/src/birdeye.jpg')
 top_img = geo.resize(top_img,scale)
-front_img = cv2.imread('./setup2/src/left.jpg')
+front_img = cv2.imread('./setup2/src/bot.jpg')
 
 cv2.namedWindow('top')
 cv2.namedWindow('front')
